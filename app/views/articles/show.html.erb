@@ -1,0 +1,11 @@
+<%= stylesheet_link_tag 'show' %>
+<div id='title'><span id='back'><%= link_to "Go Back", '/articles' %></span>
+
+<h1><%= @article.title %></h1></div>
+
+<% if user_signed_in? %>
+<p>Author: <%= User.find(@article.user_id).username %></p>
+<% end %>
+<p id='body'><%= @article.body %></p>
+
+</div>
